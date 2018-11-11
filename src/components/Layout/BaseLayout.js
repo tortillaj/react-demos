@@ -10,6 +10,6 @@ export const BaseLayout = ({ children, ...rest }) => (
       </Inset>
     </Frame.Header>
     <Frame.Main>{children}</Frame.Main>
-    <Frame.Footer>Footer</Frame.Footer>
+    <Frame.Footer></Frame.Footer>
   </Frame>
 )

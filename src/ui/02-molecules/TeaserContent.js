@@ -10,11 +10,12 @@ export const TeaserContent = styled.div`
   flex-direction: column;
   padding: ${themeValue('layout.spacing.small')} ${themeValue('layout.spacing.medium')};
   transition: all 500ms 0s cubic-bezier(.165, .84, .19, .95);
+  color: #fff;
 
   ${props => props.onClick && css`cursor: pointer;`};
 
   ${TeaserHeading} {
-    color: #fff;
+    color: inherit;
     font-size: ${themeValue('typography.h3.fontSize')};
     line-height: 1;
   }

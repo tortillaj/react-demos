@@ -18,8 +18,6 @@ export const hexToRGB = (hex, alpha) => {
   const g = parseInt(hex.slice(3, 5), 16)
   const b = parseInt(hex.slice(5, 7), 16)
 
-  console.log(hex, `rgba(${r}, ${g}, ${b}, ${alpha})`)
-
   if (alpha) {
     return `rgba(${r}, ${g}, ${b}, ${alpha})`
   } else {
@@ -196,8 +194,8 @@ export const theme = {
 
 export const GlobalStyle = createGlobalStyle`
   html {
-    /* 1rem = 16px @ base browser settings */
-    font-size: 100%;
+    /* 1rem = 14px @ base browser settings */
+    font-size: 87.5%;
     width: 100%;
     height: 100%;
 
@@ -218,6 +216,8 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
 
     * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       box-sizing: border-box;
     }
   }
