@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "echo \"No tests are written yet\" && exit 1",
+    "test": "echo \"No tests are written yet\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
