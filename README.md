@@ -16,7 +16,7 @@ Included in the project are demonstrations of new React features:
 
 - [react-cache](https://www.npmjs.com/package/react-cache) - provides simple caching
 - [Suspense](https://reactjs.org/docs/code-splitting.html#suspense) - provides loading fallback
-- [Hooks](https://reactjs.org/docs/hooks-intro.html) - not yet in repo, but will be soon
+- [Hooks](https://reactjs.org/docs/hooks-intro.html)
 
 ## Build and dev
 
