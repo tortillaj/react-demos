@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { navigate } from '@reach/router'
+import posed, { PoseGroup } from 'react-pose'
+// import { tween, easing } from 'popmotion'
 
 import { InternalLink, Rating, Teaser, TeaserCaption, TeaserContent, TeaserHeading, TeaserImage, Overlay, P } from 'ui'
 
@@ -17,18 +19,44 @@ export const TitleTeaser = ({ title }) => {
       <TeaserCaption>
         <TeaserHeading>{title.title}</TeaserHeading>
       </TeaserCaption>
-      {isHovering && <TitleTeaserHover title={title} />}
+      <TitleTeaserHover title={title} isHovering={isHovering} />
     </Teaser>
   )
 }
 
-const TitleTeaserHover = ({ title }) => (
-  <React.Fragment>
-    <Overlay color="accent" /><Overlay color="accent" />
-    <TeaserContent onClick={() => navigate(`/title/${title.titleId}`)}>
-      <TeaserHeading>{title.title}</TeaserHeading>
-      <P>{title.kind}</P>
-      <Rating score={3.75} color="colors.background" hoverColor="colors.primary.highlight" />
-    </TeaserContent>
-  </React.Fragment>
+const PosedOverlay = posed(Overlay)({
+  enter: {
+    opacity: 1,
+  },
+  exit: {
+    opacity: 0,
+  },
+})
+
+const PosedTeaserContent = posed(TeaserContent)({
+  enter: {
+    opacity: 1,
+    // height: 'auto',
+  },
+  exit: {
+    opacity: 0,
+    // height: 0,
+  },
+})
+
+const TitleTeaserHover = ({ title, isHovering }) => (
+  <PoseGroup>
+    {isHovering && [
+      <PosedOverlay color="accent" key="overlay" />,
+      <PosedTeaserContent onClick={() => navigate(`/title/${title.titleId}`)} key="content">
+        <header>
+          <TeaserHeading>{title.title}</TeaserHeading>
+        </header>
+        <section>
+          <P>{title.kind}</P>
+          <Rating score={3.75} color="colors.background" hoverColor="colors.primary.highlight" />
+        </section>
+      </PosedTeaserContent>,
+    ]}
+  </PoseGroup>
 )

@@ -10,7 +10,7 @@ export const TeaserContent = styled.div`
   right: 0;
   bottom: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   padding: ${themeValue('layout.spacing.small')} ${themeValue('layout.spacing.medium')};
   transition: all 500ms 0s cubic-bezier(.165, .84, .19, .95);

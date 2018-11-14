@@ -5,7 +5,9 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "axios": "^0.18.0",
+    "immer": "^1.7.4",
     "lodash": "^4.17.11",
+    "popmotion": "^8.5.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0-alpha.0",
     "react-cache": "^16.6.0-alpha.8af6728",

@@ -74,7 +74,7 @@ export const theme = {
   },
   sizes: {
     // these sizes are used for breakpoints
-    small: '500px', // @TODO: convert to em
+    small: '600px', // @TODO: convert to em
     medium: '900px', // @TODO: convert to em
     large: '1200px', // @TODO: convert to em
     huge: '1500px', // @TODO: convert to em
